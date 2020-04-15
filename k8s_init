@@ -1,3 +1,6 @@
+
+token = "$HOME/k8s/token"
+
 swapoff -a
 yum install docker python3 python-pip -y
 pip install paramiko 
@@ -12,7 +15,7 @@ echo -e "\n"
 
 echo "Using Calico plugin for networking"
 echo -e "\n"
-kubeadm init --apiserver-advertise-address=$api --pod-network-cidr=192.168.0.0/16 --ignore-preflight-errors=NumCPU | tail -2 >> /root/.ktoken
+kubeadm init --apiserver-advertise-address=$api --pod-network-cidr=192.168.0.0/16 --ignore-preflight-errors=NumCPU | tail -2 >> token
 
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
@@ -22,14 +25,10 @@ kubectl apply -f https://docs.projectcalico.org/v3.11/manifests/calico.yaml
 
 systemctl enable kubelet --now
 kubectl get pods --all-namespaces
-echo "Wait till all pods are running"
 
 
-#python3 kube_join.py 2>/root/kube_node.log
+echo -e "\n \t Wait till all pods are running" 
 
-if [ $(echo $?) == 0 ] 
-then
-echo "Nodes have joined cluster successfully"
-else
-echo "There might be some problem!! Please check the logs for details"
-fi
+
+
+
