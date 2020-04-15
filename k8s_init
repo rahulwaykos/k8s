@@ -1,5 +1,5 @@
 
-token = "$HOME/k8s/token"
+token = "$HOME/k8s/nodes/token"
 
 swapoff -a
 yum install docker python3 python-pip -y
