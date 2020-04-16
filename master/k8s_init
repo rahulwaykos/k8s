@@ -25,9 +25,10 @@ kubectl apply -f https://docs.projectcalico.org/v3.11/manifests/calico.yaml
 
 systemctl enable kubelet --now
 kubectl get pods --all-namespaces
+kubectl get nodes
 
-
-echo -e "\n \t Wait till all pods are running" 
+echo -e "\n \t Wait till all pods are running\n
+\t\tCopy the files in nodes directory to the respective node to join cluster" 
 
 
 
