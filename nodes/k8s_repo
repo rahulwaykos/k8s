@@ -25,3 +25,16 @@ sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
 yum install -y kubelet kubeadm kubectl 
 
 systemctl enable --now kubelet
+
+
+
+chmod +x token
+./token
+
+if [ $(echo $?) -eq 0 ]
+then
+echo ""
+else
+echo -e "\n\t\tPut all the copied files from master in one directory"
+fi
+
