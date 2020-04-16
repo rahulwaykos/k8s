@@ -15,3 +15,5 @@ sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
 yum install -y kubelet kubeadm kubectl 
 
 systemctl enable --now kubelet
+
+sh master/k8s_init
