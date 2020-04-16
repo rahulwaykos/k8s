@@ -1,5 +1,5 @@
 
-file = k8s_repo
+file="k8s_repo"
 
 if [ -f $file ] 
 then
