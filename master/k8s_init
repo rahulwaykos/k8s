@@ -27,6 +27,9 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 kubectl apply -f https://docs.projectcalico.org/v3.11/manifests/calico.yaml
 
 systemctl enable kubelet --now
+
+sleep 10
+
 kubectl get pods --all-namespaces
 kubectl get nodes
 
