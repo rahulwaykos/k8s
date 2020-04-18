@@ -35,6 +35,7 @@ if [ $(echo $?) -eq 0 ]
 then
 echo ""
 else
-echo -e "\n\t\tPut all the copied files from master in one directory"
+echo -e "\n\t\t!!!Oops!!!Something gone wrong"
+echo -e "\n"
 fi
 
