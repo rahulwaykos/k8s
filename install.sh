@@ -1,4 +1,6 @@
-
+yum install git wget -y
+git clone https://github.com/rahulwayko/k8s
+cd k8s/
 if [ -d master ]
 then
 sh master/bridged_traffic
