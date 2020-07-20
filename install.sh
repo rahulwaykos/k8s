@@ -1,5 +1,5 @@
 yum install git wget -y
-git clone https://github.com/rahulwayko/k8s
+git clone https://github.com/rahulwaykos/k8s
 cd k8s/
 if [ -d master ]
 then
